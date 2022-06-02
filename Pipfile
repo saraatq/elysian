@@ -8,11 +8,12 @@ streamlit = "*"
 
 [dev-packages]
 
-matplotlib
-numpy
-Pillow
-scipy
-imageio
+matplotlib = ">=3.5.1"
+numpy = "*"
+pandas = ">=0.21.0"
+pillow = ">=9.1.1"
+scipy = ">=1.8.0"
+imageio = ">=2.19.2"
 
 [requires]
 python_version = "3.9"
