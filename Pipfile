@@ -8,11 +8,11 @@ streamlit = "*"
 
 [dev-packages]
 
-matplotlib=3.5.1
-numpy=1.22.4
-Pillow=9.1.1
-scipy=1.8.0
-imageio=2.19.2
+matplotlib
+numpy
+Pillow
+scipy
+imageio
 
 [requires]
 python_version = "3.9"
