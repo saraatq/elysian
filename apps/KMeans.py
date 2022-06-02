@@ -1,5 +1,3 @@
-import math
-
 import numpy as np
 
 # Step 1 and 2 - Choose the number of clusters (k) and select random centroid for each cluster

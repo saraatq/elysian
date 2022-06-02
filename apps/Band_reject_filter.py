@@ -94,8 +94,13 @@ def band_filter(image):
         filtered = np.multiply(fft, band_pass_arr)
 
         ifft = fftpack.ifft2(fftpack.ifftshift(filtered))
+
+        ifft=np.maximum(np.minimum(255,ifft),0)
         imageio.imsave("temp_img/fft-then-ifft.jpg", ifft.astype(np.uint8))
         output = Image.open("temp_img/fft-then-ifft.jpg")
+
+
+
 
         return [filterIMG, output]
 
