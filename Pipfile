@@ -8,7 +8,7 @@ streamlit = "*"
 
 [dev-packages]
 
-matplotlib = ">=3.5.1"
+matplotlib = "*"
 numpy = "*"
 pandas = ">=0.21.0"
 pillow = ">=9.1.1"
