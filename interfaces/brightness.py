@@ -5,12 +5,24 @@ from apps.functions import adjustment
 
 
 def app():
+    uploaded = False
     st.subheader("Brightness Adjustment Tool")
-    image_file = st.file_uploader("", type=["png", "jpg", "jpeg"])
-    if image_file is not None:
+    with st.form("my-form", clear_on_submit=True):
+        image_file = st.file_uploader("", type=["png", "jpg", "jpeg"])
+        submitted = st.form_submit_button("Upload the dropped file!")
+        test = st.form_submit_button("upload TEST image!")
+
+    if test:
+        uploaded = True
+        img = Image.open("./imgs/Image_to_be_segmented.jpg")
+
+    elif submitted and image_file is not None:
+        uploaded = True
+        img = Image.open(image_file)
+
+    if uploaded:
         st.subheader("Before")
         # View Uploaded Image
-        img = Image.open(image_file)
         st.image(img, width=500)
         # call the function
         st.subheader("After")
