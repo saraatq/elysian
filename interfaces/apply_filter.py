@@ -5,7 +5,7 @@ from apps.functions import apply_filter
 
 
 def app():
-    st.subheader("Filter Tool")
+    st.subheader("laplacian Filter Tool")
     image_file = st.file_uploader("", type=["png", "jpg", "jpeg"])
     if image_file is not None:
         st.subheader("Before")

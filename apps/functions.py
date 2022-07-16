@@ -4,23 +4,8 @@ from matplotlib import pyplot as plt
 
 
 def apply_filter(img):
-    while True:
-        print("\nyou can use \n1. laplacian Filter\n2. input your own filter")
-        choice = int(input("please choose: "))
-        if choice == 1:
-            # laplacian Filter
-            filter_ = [[0, -1, 0], [-1, 4, -1], [0, -1, 0]]
-            break
-        elif choice == 2:
-            row = int(input("please enter rows number: "))
-            col = int(input("please enter columns number: "))
-            filter_ = []
-            for i in range(row):
-                filter_.append([])
-                for j in range(col):
-                    filter_[i].append(int(input()))
-            break
-    applied_filter = filter_
+    # laplacian Filter
+    applied_filter = [[0, -1, 0], [-1, 4, -1], [0, -1, 0]]
 
     pixels = img.load()
     # to get starting and ending point
