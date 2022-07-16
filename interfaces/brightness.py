@@ -8,6 +8,7 @@ def app():
     uploaded = False
     st.subheader("Brightness Adjustment Tool")
     with st.form("my-form", clear_on_submit=True):
+        number = st.slider('choose your value', min_value=-5, max_value=5, value=0, step=1)
         image_file = st.file_uploader("", type=["png", "jpg", "jpeg"])
         submitted = st.form_submit_button("Upload the dropped file!")
         test = st.form_submit_button("upload TEST image!")
@@ -26,5 +27,11 @@ def app():
         st.image(img, width=500)
         # call the function
         st.subheader("After")
-        new_img = adjustment(img)
+
+        # if the user didn't choose a value the img doesn't change
+        if number == 0:
+            number = 1
+
+        new_img = adjustment(img, number)
         st.image(new_img, width=500)
+        st.markdown('***you can change the value and upload any photo again.***')

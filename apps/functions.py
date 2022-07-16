@@ -56,21 +56,14 @@ def show_histogram(image):
     return histogram
 
 
-def adjustment(image):
-    # input
-    print("\nplease choose a mode: \n1. brightness\n2. darkness")
-    ch = int(input())
-    mode = "brightness" if ch == 1 else "darkness"
-    print("\nplease choose a value: ")
-    value = float(input())
-
+def adjustment(image, value):
     # image brightness enhancer
     enhancer = ImageEnhance.Brightness(image)
-    # if darkness then  0 < value < 1
-    if mode == "darkness":
+    if value < 0:
+        value *= -1
+        # if darkness then  0 < value < 1
         while value > 1:
             value /= float(10)
 
     output = enhancer.enhance(value)
-    print("done")
     return output
